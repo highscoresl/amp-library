@@ -49,10 +49,10 @@ class AMPDOMTreeBuilder extends DOMTreeBuilder
      * @param InputStream $inputstream
      * @param array $options
      */
-    public function __construct(InputStream $inputstream, array $options = [])
+    public function __construct($stream, array $options = [])
     {
         // We embed a scanner so that $this->startTag() knows the current line number
-        $this->scanner = new Scanner($inputstream);
+        $this->scanner = new Scanner($stream);
         parent::__construct(false, $options);
     }
 
